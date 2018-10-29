@@ -2,9 +2,14 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/02_persistence/01_hr.iml" filepath="$PROJECT_DIR$/02_persistence/01_hr.iml" />
       <module fileurl="file://$PROJECT_DIR$/01_architecture/architecture-reactor.iml" filepath="$PROJECT_DIR$/01_architecture/architecture-reactor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/02_persistence/architecture-reactor (1).iml" filepath="$PROJECT_DIR$/02_persistence/architecture-reactor (1).iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/bfh-jmd.iml" filepath="$PROJECT_DIR$/.idea/bfh-jmd.iml" />
+      <module fileurl="file://$PROJECT_DIR$/02_persistence/01_hr/hr.iml" filepath="$PROJECT_DIR$/02_persistence/01_hr/hr.iml" />
       <module fileurl="file://$PROJECT_DIR$/01_architecture/01_pattern/pattern.iml" filepath="$PROJECT_DIR$/01_architecture/01_pattern/pattern.iml" />
+      <module fileurl="file://$PROJECT_DIR$/02_persistence/01_hr/pattern (1).iml" filepath="$PROJECT_DIR$/02_persistence/01_hr/pattern (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/01_architecture/02_springboot/springboot.iml" filepath="$PROJECT_DIR$/01_architecture/02_springboot/springboot.iml" />
     </modules>
   </component>
 </project>

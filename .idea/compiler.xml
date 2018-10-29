@@ -6,13 +6,23 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="01_hr" />
+        <module name="hr" />
         <module name="pattern" />
+        <module name="pattern (1)" />
+        <module name="springboot" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="01_hr" target="1.8" />
       <module name="architecture-reactor" target="1.5" />
+      <module name="architecture-reactor (1)" target="1.5" />
       <module name="bfh-jmd" target="1.5" />
+      <module name="hr" target="1.8" />
       <module name="pattern" target="8" />
+      <module name="pattern (1)" target="8" />
+      <module name="persistence-reactor" target="1.5" />
+      <module name="springboot" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

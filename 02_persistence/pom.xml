@@ -8,7 +8,6 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
   <packaging>pom</packaging>
   
   <modules>
-	  <module>01_pattern</module>
-	  <module>02_springboot</module>
+	  <module>01_hr</module>
   </modules>
 </project>
