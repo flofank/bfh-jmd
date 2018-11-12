@@ -9,6 +9,7 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/01_architecture/01_springboot/pom.xml" />
         <option value="$PROJECT_DIR$/01_architecture/02_springboot/pom.xml" />
+        <option value="$PROJECT_DIR$/02_persistence/02_relationships/pom.xml" />
       </list>
     </option>
   </component>

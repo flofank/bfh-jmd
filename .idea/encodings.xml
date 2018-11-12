@@ -5,5 +5,7 @@
     <file url="file://$PROJECT_DIR$/01_architecture/02_springboot" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/02_persistence" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/02_persistence/01_hr" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/02_persistence/02_relationships" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/02_persistence/03_queries" charset="UTF-8" />
   </component>
 </project>
