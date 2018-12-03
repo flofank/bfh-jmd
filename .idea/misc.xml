@@ -6,11 +6,15 @@
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/01_architecture/01_springboot/pom.xml" />
-        <option value="$PROJECT_DIR$/01_architecture/02_springboot/pom.xml" />
-        <option value="$PROJECT_DIR$/02_persistence/02_relationships/pom.xml" />
+        <option value="$PROJECT_DIR$/03_appservices/01_hello/pom.xml" />
       </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/03_appservices/02_relationships/pom.xml" />
+        <option value="$PROJECT_DIR$/03_appservices/03_queries/pom.xml" />
+      </set>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK" />

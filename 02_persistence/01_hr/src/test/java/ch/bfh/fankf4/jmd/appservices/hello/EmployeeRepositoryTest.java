@@ -1,6 +1,6 @@
-package ch.bfh.fankf4.jmd.persistence.hr;
+package ch.bfh.fankf4.jmd.appservices.hello;
 
-import ch.bfh.fankf4.jmd.persistence.hr.model.Employee;
+import ch.bfh.fankf4.jmd.appservices.hello.model.Employee;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -1,15 +1,15 @@
-drop table public.employee_projects;
-drop table public.phone;
-drop table public.employee;
-drop table public.address;
-drop table public.department;
-drop table public.project;
+--drop table public.employee_projects;
+--drop table public.phone;
+--drop table public.employee;
+--drop table public.address;
+--drop table public.department;
+--drop table public.project;
 
-drop sequence address_seq;
-drop sequence department_seq;
-drop sequence employee_seq;
-drop sequence phone_seq;
-drop sequence project_seq;
+--drop sequence address_seq;
+--drop sequence department_seq;
+--drop sequence employee_seq;
+--drop sequence phone_seq;
+--drop sequence project_seq;
 
 CREATE TABLE public.address (
     id integer NOT NULL,

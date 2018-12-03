@@ -1,4 +1,4 @@
-package ch.bfh.fankf4.jmd.persistence.hr.model;
+package ch.bfh.fankf4.jmd.appservices.hello.model;
 
 
 import javax.persistence.Entity;

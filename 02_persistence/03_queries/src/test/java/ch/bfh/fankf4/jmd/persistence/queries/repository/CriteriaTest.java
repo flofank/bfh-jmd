@@ -11,6 +11,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
+import javax.persistence.Tuple;
 import javax.persistence.TypedQuery;
 import javax.persistence.criteria.*;
 import java.util.List;
@@ -32,6 +33,7 @@ public class CriteriaTest {
   public void findAllZuercher() {
     CriteriaBuilder cb = em.getCriteriaBuilder();
     CriteriaQuery<Employee> cq = cb.createQuery(Employee.class);
+
     Root<Employee> employee = cq.from(Employee.class);
     cq.select(employee);
     cq.where(cb.equal(employee.get(Employee_.address).get(Address_.state), "ZH"));
@@ -51,10 +53,11 @@ public class CriteriaTest {
     // select new DepartmentSalaryStatistics(e.department.name, avg(e.salary)) from Employee e group by e.department.name
     CriteriaBuilder cb = em.getCriteriaBuilder();
     CriteriaQuery<DepartmentSalaryStatistics> cq = cb.createQuery(DepartmentSalaryStatistics.class);
+
     Root<Employee> employee = cq.from(Employee.class);
     cq.groupBy(employee.get(Employee_.department).get("name"));
-    cq.select(cb.construct(DepartmentSalaryStatistics.class, employee.get(Employee_.department).get("name"),
-        cb.avg(employee.get(Employee_.salary))));
+    Expression avgSalary = cb.avg(employee.get(Employee_.salary));
+    cq.select(cb.construct(DepartmentSalaryStatistics.class, employee.get(Employee_.department).get("name"), avgSalary));
 
     TypedQuery<DepartmentSalaryStatistics> query = em.createQuery(cq);
     List<DepartmentSalaryStatistics> list = query.getResultList();
@@ -74,12 +77,14 @@ public class CriteriaTest {
   public void findEmployeeWithSmallestSalary() {
     CriteriaBuilder cb = em.getCriteriaBuilder();
     CriteriaQuery<Employee> cq = cb.createQuery(Employee.class);
+
     Root<Employee> employee = cq.from(Employee.class);
+
     Subquery<Long> sub = cq.subquery(Long.class);
     Root<Employee> sEmployee = sub.from(Employee.class);
     sub.select(cb.min(sEmployee.get(Employee_.salary)));
-    cq.where(cb.equal(employee.get(Employee_.salary), sub));
 
+    cq.where(cb.equal(employee.get(Employee_.salary), sub));
 
     TypedQuery<Employee> query = em.createQuery(cq);
     List<Employee> list = query.getResultList();
@@ -108,6 +113,7 @@ public class CriteriaTest {
   public void findAllEmployeesWithoutProject() {
     CriteriaBuilder cb = em.getCriteriaBuilder();
     CriteriaQuery<Employee> cq = cb.createQuery(Employee.class);
+
     Root<Employee> employee = cq.from(Employee.class);
     cq.where(cb.isEmpty(employee.get(Employee_.projects)));
 
@@ -124,6 +130,7 @@ public class CriteriaTest {
   public void findAllWorkPhonesOrderedByNumber() {
     CriteriaBuilder cb = em.getCriteriaBuilder();
     CriteriaQuery<String> cq = cb.createQuery(String.class);
+
     Root<Phone> phone = cq.from(Phone.class);
     cq.select(phone.get(Phone_.phonenumber));
     cq.where(cb.equal(phone.get(Phone_.type), PhoneType.WORK));
@@ -142,6 +149,7 @@ public class CriteriaTest {
   public void findAllEmployeesWithoutWorkPhone() {
     CriteriaBuilder cb = em.getCriteriaBuilder();
     CriteriaQuery<Employee> cq = cb.createQuery(Employee.class);
+
     Root<Employee> employee = cq.from(Employee.class);
 
     Subquery<Employee> sub = cq.subquery(Employee.class);
@@ -150,6 +158,7 @@ public class CriteriaTest {
     sub.where(cb.equal(sPhone.get(Phone_.type), PhoneType.WORK));
     sub.select(sEmployee);
     sub.distinct(true);
+
     cq.where(cb.not(employee.in(sub)));
 
 

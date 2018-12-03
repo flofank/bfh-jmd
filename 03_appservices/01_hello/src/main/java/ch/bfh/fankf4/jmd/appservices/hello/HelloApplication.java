@@ -1,12 +1,12 @@
-package ch.bfh.fankf4.jmd.persistence.hr;
+package ch.bfh.fankf4.jmd.appservices.hello;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class HrApplication {
+public class HelloApplication {
 
   public static void main(String[] args) {
-    SpringApplication.run(HrApplication.class, args);
+    SpringApplication.run(HelloApplication.class, args);
   }
 }

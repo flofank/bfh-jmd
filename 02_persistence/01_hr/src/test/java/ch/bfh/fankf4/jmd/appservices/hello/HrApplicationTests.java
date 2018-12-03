@@ -1,4 +1,4 @@
-package ch.bfh.fankf4.jmd.persistence.hr;
+package ch.bfh.fankf4.jmd.appservices.hello;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
