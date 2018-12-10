@@ -1,21 +1,22 @@
 package ch.bfh.fankf4.jmd.appservices.hello.hello;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class GreetingService {
 
+  @Autowired
+  private GreetingConfiguration config;
+
   public String getDayTimeGreeting(int hour) {
-    if (hour > 20) {
-      return "Good night";
-    } else if (hour > 15) {
-      return "Good evening";
-    } else if (hour > 9) {
-      return "Hello";
-    } else if (hour > 4) {
-      return "Good morning";
-    } else {
-      return "Go to sleep";
+    int h = hour;
+    while (h > 0) {
+      if (config.getDaytimePhrases().containsKey(h)) {
+        return config.getDaytimePhrases().get(h);
+      }
+      h--;
     }
+    throw new IllegalStateException("No Greeting phrase configured for " + hour + "h");
   }
 }

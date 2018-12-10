@@ -19,7 +19,13 @@ public class HelloCommandLineRunner implements CommandLineRunner {
 
   @Override
   public void run(String... args) {
-    LOG.info(helloService.sayHello("Peter", 21));
-    LOG.info(helloService.sayHello("Max", 12));
+    while(true) {
+      LOG.info(helloService.sayHello("Peter", 21));
+      LOG.info(helloService.sayHello("Max", 17));
+      LOG.info("Sleeping ------");
+      try {
+        Thread.sleep(1000);
+      } catch (Exception e) {}
+    }
   }
 }

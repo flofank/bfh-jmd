@@ -1,0 +1,11 @@
+spring.profiles.active: dev
+greetings:
+  adult-age: 18
+  daytime-phrases:
+    4: Good morning
+    9: Hello
+    14: Good evening
+    20: Good night
+    0: Go to sleep
+
+

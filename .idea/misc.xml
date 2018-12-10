@@ -8,6 +8,7 @@
       <list>
         <option value="$PROJECT_DIR$/01_architecture/01_springboot/pom.xml" />
         <option value="$PROJECT_DIR$/03_appservices/01_hello/pom.xml" />
+        <option value="$PROJECT_DIR$/03_appservices/02_chat/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

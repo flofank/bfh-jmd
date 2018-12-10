@@ -17,12 +17,15 @@ public class HelloService {
   @Autowired
   private GreetingService greetingService;
 
+  @Autowired
+  private GreetingConfiguration config;
+
   public String sayHello() {
     return "Hello";
   }
 
   private String sayHello(int age) {
-    if (age < 18) {
+    if (age < config.getAdultAge()) {
       return "Hi";
     }
     return greetingService.getDayTimeGreeting(Calendar.getInstance().get(Calendar.HOUR_OF_DAY));
