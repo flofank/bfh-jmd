@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
   <groupId>ch.bfh.fankf4.jmd.appservices</groupId>
-	<artifactId>chat</artifactId>
+	<artifactId>booking</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	<name>booking</name>
@@ -27,6 +27,10 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-activemq</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>com.h2database</groupId>
