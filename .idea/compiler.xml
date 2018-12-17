@@ -9,6 +9,7 @@
         <module name="01_hr" />
         <module name="02_relationships" />
         <module name="chat" />
+        <module name="chat (1)" />
         <module name="hello" />
         <module name="hr (1)" />
         <module name="pattern" />
@@ -31,6 +32,8 @@
       <module name="architecture-reactor (1)" target="1.5" />
       <module name="bfh-jmd" target="1.5" />
       <module name="chat" target="1.8" />
+      <module name="chat (1)" target="1.8" />
+      <module name="email" target="1.8" />
       <module name="hello" target="1.8" />
       <module name="hr" target="1.8" />
       <module name="hr (1)" target="1.8" />

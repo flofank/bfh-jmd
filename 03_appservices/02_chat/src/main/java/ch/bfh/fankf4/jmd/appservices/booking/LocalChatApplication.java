@@ -1,6 +1,5 @@
-package ch.bfh.fankf4.jmd.appservices.chat;
+package ch.bfh.fankf4.jmd.appservices.booking;
 
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
@@ -8,10 +7,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.jms.annotation.JmsListener;
 import org.springframework.jms.core.JmsTemplate;
-import org.springframework.jms.core.MessageCreator;
 
 import javax.jms.*;
-import javax.xml.soap.Text;
 import java.util.*;
 
 

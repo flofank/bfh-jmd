@@ -1,4 +1,4 @@
-spring.profiles.active: dev
+spring.profiles.active:
 greetings:
   adult-age: 18
   daytime-phrases:
@@ -7,5 +7,9 @@ greetings:
     14: Good evening
     20: Good night
     0: Go to sleep
-
+spring.task.execution.pool:
+  core-size: 1
+  max-size: 1
+  queue-capacity: 100
+  keep-alive: 60s
 
