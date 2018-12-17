@@ -54,9 +54,12 @@ public class BookingService {
   }
 
   @JmsListener(destination = "${destination}")
+  @Transactional
   public void onHistoryRequest(TextMessage message) throws JMSException {
     String[] booking = message.getText().split(":");
-    bookEvent(booking[0], booking[1]);
+    try {
+      bookEvent(booking[0], booking[1]);
+    } catch (Exception e) {}
   }
 
 }
