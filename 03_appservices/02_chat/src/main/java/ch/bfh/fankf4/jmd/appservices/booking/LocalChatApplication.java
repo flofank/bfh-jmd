@@ -87,7 +87,7 @@ public class LocalChatApplication implements CommandLineRunner {
     });
   }
 
-	@JmsListener(destination = "${destination}", selector = "JMSType = 'Chat'")
+
 	//@JmsListener(destination = "OtherQueue")
   public void onMessage(TextMessage message) {
 	  try {

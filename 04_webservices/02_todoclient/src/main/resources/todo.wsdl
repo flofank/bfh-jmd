@@ -1,0 +1,201 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://example.org/todo" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="TodoListService" targetNamespace="http://example.org/todo">
+  <wsdl:types>
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://example.org/todo" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://example.org/todo">
+      <xs:element name="AddTodo" type="tns:AddTodo"/>
+      <xs:element name="AddTodoResponse" type="tns:AddTodoResponse"/>
+      <xs:element name="GetTodos" type="tns:GetTodos"/>
+      <xs:element name="GetTodosResponse" type="tns:GetTodosResponse"/>
+      <xs:element name="completeTodo" type="tns:completeTodo"/>
+      <xs:element name="completeTodoResponse" type="tns:completeTodoResponse"/>
+      <xs:element name="getTodo" type="tns:getTodo"/>
+      <xs:element name="getTodoResponse" type="tns:getTodoResponse"/>
+      <xs:element name="removeTodo" type="tns:removeTodo"/>
+      <xs:complexType name="AddTodo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+          <xs:element minOccurs="0" name="arg1" type="xs:dateTime"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AddTodoResponse">
+        <xs:sequence>
+          <xs:element name="return" type="xs:long"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="completeTodo">
+        <xs:sequence>
+          <xs:element name="arg0" type="xs:long"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="completeTodoResponse">
+        <xs:sequence/>
+      </xs:complexType>
+      <xs:complexType name="removeTodo">
+        <xs:sequence>
+          <xs:element name="arg0" type="xs:long"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getTodo">
+        <xs:sequence>
+          <xs:element name="arg0" type="xs:long"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getTodoResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:todo"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="todo">
+        <xs:sequence>
+          <xs:element name="completed" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="dueDate" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="id" type="xs:long"/>
+          <xs:element minOccurs="0" name="title" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetTodos">
+        <xs:sequence/>
+      </xs:complexType>
+      <xs:complexType name="GetTodosResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:todo"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="TodoNotFoundException" type="tns:TodoNotFoundException"/>
+      <xs:complexType name="TodoNotFoundException">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="message" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="GetTodosResponse">
+    <wsdl:part element="tns:GetTodosResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="TodoNotFoundException">
+    <wsdl:part element="tns:TodoNotFoundException" name="TodoNotFoundException">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTodo">
+    <wsdl:part element="tns:getTodo" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetTodos">
+    <wsdl:part element="tns:GetTodos" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="AddTodo">
+    <wsdl:part element="tns:AddTodo" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTodoResponse">
+    <wsdl:part element="tns:getTodoResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="AddTodoResponse">
+    <wsdl:part element="tns:AddTodoResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="completeTodo">
+    <wsdl:part element="tns:completeTodo" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="removeTodo">
+    <wsdl:part element="tns:removeTodo" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="completeTodoResponse">
+    <wsdl:part element="tns:completeTodoResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="TodoList">
+    <wsdl:operation name="AddTodo">
+      <wsdl:input message="tns:AddTodo" name="AddTodo">
+      </wsdl:input>
+      <wsdl:output message="tns:AddTodoResponse" name="AddTodoResponse">
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="completeTodo">
+      <wsdl:input message="tns:completeTodo" name="completeTodo">
+      </wsdl:input>
+      <wsdl:output message="tns:completeTodoResponse" name="completeTodoResponse">
+      </wsdl:output>
+      <wsdl:fault message="tns:TodoNotFoundException" name="TodoNotFoundException">
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="removeTodo">
+      <wsdl:input message="tns:removeTodo" name="removeTodo">
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="getTodo">
+      <wsdl:input message="tns:getTodo" name="getTodo">
+      </wsdl:input>
+      <wsdl:output message="tns:getTodoResponse" name="getTodoResponse">
+      </wsdl:output>
+      <wsdl:fault message="tns:TodoNotFoundException" name="TodoNotFoundException">
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetTodos">
+      <wsdl:input message="tns:GetTodos" name="GetTodos">
+      </wsdl:input>
+      <wsdl:output message="tns:GetTodosResponse" name="GetTodosResponse">
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TodoListServiceSoapBinding" type="tns:TodoList">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="AddTodo">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="AddTodo">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="AddTodoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="completeTodo">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="completeTodo">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="completeTodoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="TodoNotFoundException">
+        <soap:fault name="TodoNotFoundException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="removeTodo">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="removeTodo">
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="getTodo">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getTodo">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getTodoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="TodoNotFoundException">
+        <soap:fault name="TodoNotFoundException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetTodos">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="GetTodos">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="GetTodosResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TodoListService">
+    <wsdl:port binding="tns:TodoListServiceSoapBinding" name="TodoListPort">
+      <soap:address location="http://localhost:8080/ws/todo"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

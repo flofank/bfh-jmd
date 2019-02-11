@@ -14,6 +14,8 @@
       <module fileurl="file://$PROJECT_DIR$/02_persistence/persistence-reactor.iml" filepath="$PROJECT_DIR$/02_persistence/persistence-reactor.iml" />
       <module fileurl="file://$PROJECT_DIR$/02_persistence/03_queries/queries.iml" filepath="$PROJECT_DIR$/02_persistence/03_queries/queries.iml" />
       <module fileurl="file://$PROJECT_DIR$/01_architecture/02_springboot/springboot.iml" filepath="$PROJECT_DIR$/01_architecture/02_springboot/springboot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/04_webservices/02_todoclient/todo-soap-client.iml" filepath="$PROJECT_DIR$/04_webservices/02_todoclient/todo-soap-client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/04_webservices/01_todoservice/todo-soap-service.iml" filepath="$PROJECT_DIR$/04_webservices/01_todoservice/todo-soap-service.iml" />
     </modules>
   </component>
 </project>
