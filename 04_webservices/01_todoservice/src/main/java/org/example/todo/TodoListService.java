@@ -1,5 +1,7 @@
-package org.example.todo.old;
+package org.example.todo;
 
+import org.apache.cxf.interceptor.InInterceptors;
+import org.apache.cxf.interceptor.OutInterceptors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,6 +14,8 @@ import java.util.Optional;
 
 @Service
 @WebService(name = "TodoList", serviceName = "TodoListService", targetNamespace = "http://example.org/todo")
+@InInterceptors(interceptors = {"org.apache.cxf.interceptor.LoggingInInterceptor", "org.example.AuthInInterceptor"})
+@OutInterceptors(interceptors = {"org.apache.cxf.interceptor.LoggingOutInterceptor"})
 public class TodoListService {
 
   @Autowired

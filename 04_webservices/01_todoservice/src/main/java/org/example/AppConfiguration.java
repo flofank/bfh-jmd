@@ -2,7 +2,7 @@ package org.example;
 
 import org.apache.cxf.Bus;
 import org.apache.cxf.jaxws.EndpointImpl;
-import org.example.todo.old.TodoListService;
+import org.example.todo.TodoListService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

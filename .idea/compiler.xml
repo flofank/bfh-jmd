@@ -17,18 +17,13 @@
         <module name="queries" />
         <module name="springboot" />
         <module name="todo-soap-client" />
+        <module name="todo-soap-service" />
       </profile>
       <profile name="Annotation profile for reactor" enabled="true">
         <sourceOutputDir name="../../03_appservices/01_hello/target/generated-sources/annotations" />
         <sourceTestOutputDir name="../../03_appservices/01_hello/target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="hr" />
-      </profile>
-      <profile name="Annotation profile for todo-soap-service" enabled="true">
-        <sourceOutputDir name="../../04_appservices/01_todoservice/target/generated-sources/annotations" />
-        <sourceTestOutputDir name="../../04_appservices/01_todoservice/target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <module name="todo-soap-service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

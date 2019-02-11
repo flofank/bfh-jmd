@@ -1,4 +1,4 @@
-package org.example.todo.old;
+package org.example.todo;
 
 import javax.xml.ws.WebFault;
 

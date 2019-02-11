@@ -1,5 +1,6 @@
 package org.example;
 
+import org.apache.cxf.frontend.ClientProxy;
 import org.example.todo.Todo;
 import org.example.todo.TodoList;
 import org.example.todo.TodoListService;
@@ -26,6 +27,8 @@ public class Application implements CommandLineRunner {
 	private String endpointAddress;
 	@Value("${date.format}")
 	private String dateFormat;
+  @Value("${auth.token}")
+  private String authToken;
 
 	@Autowired
 	private TodoList todoList;
@@ -35,6 +38,7 @@ public class Application implements CommandLineRunner {
     TodoListService todoListService = new TodoListService();
     TodoList todoList = todoListService.getTodoListPort();
     ((BindingProvider) todoList).getRequestContext().put(BindingProvider.ENDPOINT_ADDRESS_PROPERTY, endpointAddress);
+    ClientProxy.getClient(todoList).getOutInterceptors().add(new AuthOutInterceptor(authToken));
     return todoList;
   }
 
