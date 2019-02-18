@@ -11,5 +11,6 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 	  <module>01_todoservice</module>
 	  <module>02_todoclient</module>
 	  <module>03_soap_contract_first</module>
+	  <module>04_todorest</module>
   </modules>
 </project>

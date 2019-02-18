@@ -13,5 +13,6 @@
     <file url="file://$PROJECT_DIR$/04_webservices/01_todoservice" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/04_webservices/02_todoclient" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/04_webservices/03_soap_contract_first" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/04_webservices/04_todorest" charset="UTF-8" />
   </component>
 </project>

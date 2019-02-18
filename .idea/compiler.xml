@@ -16,6 +16,7 @@
         <module name="pattern (1)" />
         <module name="queries" />
         <module name="springboot" />
+        <module name="todo-rest-service" />
         <module name="todo-soap-client" />
         <module name="todo-soap-service" />
         <module name="todo-soap-service (1)" />
@@ -48,6 +49,7 @@
       <module name="queries (1)" target="1.8" />
       <module name="relationships" target="1.8" />
       <module name="springboot" target="1.8" />
+      <module name="todo-rest-service" target="1.8" />
       <module name="todo-soap-client" target="1.8" />
       <module name="todo-soap-service" target="1.8" />
       <module name="todo-soap-service (1)" target="1.8" />

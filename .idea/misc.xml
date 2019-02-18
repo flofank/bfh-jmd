@@ -14,6 +14,7 @@
         <option value="$PROJECT_DIR$/04_appservices/02_todoclient/pom.xml" />
         <option value="$PROJECT_DIR$/04_webservices/03_soap_contract_first/pom.xml" />
         <option value="$PROJECT_DIR$/04_webservices/01_todoservice/pom.xml" />
+        <option value="$PROJECT_DIR$/04_webservices/04_todorest/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
