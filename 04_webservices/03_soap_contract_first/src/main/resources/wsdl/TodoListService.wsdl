@@ -1,0 +1,101 @@
+<definitions name="TodoListService" xmlns="http://schemas.xmlsoap.org/wsdl/"
+			 targetNamespace="http://example.org/todo" xmlns:tns="http://example.org/todo"
+			 xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+       xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<types>
+    <xsd:schema>
+      <xsd:import namespace="http://example.org/todo" schemaLocation="TodoTypes.xsd"></xsd:import>
+    </xsd:schema>
+	</types>
+
+	<message name="AddTodo">
+		<part name="parameters" element="tns:AddTodo"/>
+	</message>
+	<message name="AddTodoResponse">
+		<part name="parameters" element="tns:AddTodoResponse"/>
+	</message>
+	<message name="GetTodos">
+		<part name="parameters" element="tns:GetTodos"/>
+	</message>
+	<message name="GetTodosResponse">
+		<part name="parameters" element="tns:GetTodosResponse"/>
+	</message>
+	<message name="CompleteTodo">
+		<part name="parameters" element="tns:CompleteTodo"/>
+	</message>
+	<message name="CompleteTodoResponse">
+		<part name="parameters" element="tns:CompleteTodoResponse"/>
+	</message>
+	<message name="RemoveTodo">
+		<part name="parameters" element="tns:RemoveTodo"/>
+	</message>
+	<message name="TodoNotFoundException">
+		<part name="TodoNotFoundException" element="tns:TodoNotFound"/>
+	</message>
+
+	<portType name="TodoList">
+		<operation name="AddTodo">
+			<input message="tns:AddTodo"/>
+			<output message="tns:AddTodoResponse"/>
+		</operation>
+		<operation name="GetTodos">
+			<input message="tns:GetTodos"/>
+			<output message="tns:GetTodosResponse"/>
+		</operation>
+		<operation name="CompleteTodo">
+			<input message="tns:CompleteTodo"/>
+			<output message="tns:CompleteTodoResponse"/>
+			<fault name="TodoNotFoundException" message="tns:TodoNotFoundException"/>
+		</operation>
+		<operation name="RemoveTodo">
+			<input message="tns:RemoveTodo"/>
+		</operation>
+	</portType>
+
+	<binding name="TodoListSoapBinding" type="tns:TodoList">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="AddTodo">
+			<soap:operation soapAction="" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="GetTodos">
+			<soap:operation soapAction="" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+		<operation name="CompleteTodo">
+			<soap:operation soapAction="" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="TodoNotFoundException">
+				<soap:fault name="TodoNotFoundException" use="literal"/>
+			</fault>
+		</operation>
+		<operation name="RemoveTodo">
+			<soap:operation soapAction="" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+		</operation>
+	</binding>
+
+	<service name="TodoListService">
+		<port binding="tns:TodoListSoapBinding" name="TodoListPort">
+			<soap:address location="http://localhost:8080/ws/todo"/>
+		</port>
+	</service>
+
+</definitions>

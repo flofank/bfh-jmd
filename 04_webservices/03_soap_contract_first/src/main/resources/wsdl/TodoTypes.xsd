@@ -1,0 +1,66 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://example.org/todo" xmlns:tns="http://example.org/todo">
+
+  <element name="AddTodo" type="tns:AddTodo"/>
+  <element name="AddTodoResponse" type="tns:AddTodoResponse"/>
+  <element name="GetTodos" type="tns:GetTodos"/>
+  <element name="GetTodosResponse" type="tns:GetTodosResponse"/>
+  <element name="CompleteTodo" type="tns:CompleteTodo"/>
+  <element name="CompleteTodoResponse" type="tns:CompleteTodoResponse"/>
+  <element name="RemoveTodo" type="tns:RemoveTodo"/>
+  <element name="TodoNotFound" type="string"/>
+
+  <complexType name="AddTodo">
+    <sequence>
+      <element name="title">
+        <simpleType>
+          <restriction base="string">
+            <minLength value="1"/>
+          </restriction>
+        </simpleType>
+      </element>
+      <element name="dueDate" type="date" minOccurs="0"/>
+    </sequence>
+  </complexType>
+  <complexType name="AddTodoResponse">
+    <sequence>
+      <element name="id" type="long"/>
+    </sequence>
+  </complexType>
+  <complexType name="GetTodos">
+    <sequence/>
+  </complexType>
+  <complexType name="GetTodosResponse">
+    <sequence>
+      <element maxOccurs="unbounded" minOccurs="0" name="todos" type="tns:Todo"/>
+    </sequence>
+  </complexType>
+  <complexType name="CompleteTodo">
+    <sequence>
+      <element name="id" type="long"/>
+    </sequence>
+  </complexType>
+  <complexType name="CompleteTodoResponse">
+    <sequence/>
+  </complexType>
+  <complexType name="RemoveTodo">
+    <sequence>
+      <element name="id" type="long"/>
+    </sequence>
+  </complexType>
+
+  <complexType name="Todo">
+    <sequence>
+      <element name="id" type="long"/>
+      <element name="title">
+        <simpleType>
+          <restriction base="string">
+            <minLength value="1"/>
+          </restriction>
+        </simpleType>
+      </element>
+      <element name="dueDate" type="date" minOccurs="0"/>
+      <element name="completed" type="boolean" minOccurs="0"/>
+    </sequence>
+  </complexType>
+</schema>

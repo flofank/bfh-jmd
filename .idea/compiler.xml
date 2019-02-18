@@ -18,6 +18,7 @@
         <module name="springboot" />
         <module name="todo-soap-client" />
         <module name="todo-soap-service" />
+        <module name="todo-soap-service (1)" />
       </profile>
       <profile name="Annotation profile for reactor" enabled="true">
         <sourceOutputDir name="../../03_appservices/01_hello/target/generated-sources/annotations" />
@@ -49,6 +50,7 @@
       <module name="springboot" target="1.8" />
       <module name="todo-soap-client" target="1.8" />
       <module name="todo-soap-service" target="1.8" />
+      <module name="todo-soap-service (1)" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
